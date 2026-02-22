@@ -12,6 +12,13 @@
         proxy 10.8.0.2:15565
       }
     }
+
+    # Minecraft Command Forward
+    :25575 {
+      route {
+        proxy 10.8.0.2:15575
+      }
+    }
   }
 }
 

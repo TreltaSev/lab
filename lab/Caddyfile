@@ -9,5 +9,11 @@
         proxy localhost:25565
       }
     }
+
+    :15575 {
+      route {
+        proxy localhost:25575
+      }
+    }
   }
 }

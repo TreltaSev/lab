@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - "15565:15565"
+      - "15575:15575"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
