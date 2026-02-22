@@ -2,14 +2,25 @@
   log {
     level INFO
   }
-}
 
-:25565 {
   layer4 {
-    route {
-      proxy {
-        to localhost:25565
+
+
+    # Minecraft Port Forward
+    :25565 {
+      route {
+        proxy 10.8.0.2:15565
       }
     }
   }
+}
+
+
+# Subdomain + Domains
+*.trelta.dev {
+  reverse_proxy 10.8.0.2
+}
+
+trelta.dev {
+  reverse_proxy 10.8.0.2
 }
