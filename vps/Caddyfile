@@ -9,14 +9,14 @@
     # Minecraft Port Forward
     :25565 {
       route {
-        proxy 10.8.0.2:15565
+        proxy 10.8.0.2:25565
       }
     }
 
     # Minecraft Command Forward
     :25575 {
       route {
-        proxy 10.8.0.2:15575
+        proxy 10.8.0.2:25575
       }
     }
   }
