@@ -1,0 +1,18 @@
+name: VPS
+
+services:
+  router:
+    container_name: vps-router
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    
+    networks:
+      - docker-network
+    
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+
+networks:
+  docker-network:
+    driver: bridge
