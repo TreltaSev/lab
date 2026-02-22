@@ -1,6 +1,6 @@
 services:
   caddy:
-    container_name: vps-caddy
+    container_name: lab-caddy
     build: .
     ports:
       - "15565:15565"
