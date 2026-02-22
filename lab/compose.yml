@@ -1,18 +1,16 @@
-name: LAB
-
 services:
-  router:
-    container_name: lab-router
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
-    
-    networks:
-      - docker-network
-    
+  caddy:
+    container_name: vps-caddy
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+      - "25565:25565"
     volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
 
-networks:
-  docker-network:
-    driver: bridge
+volumes:
+  caddy_data:
+  caddy_config:

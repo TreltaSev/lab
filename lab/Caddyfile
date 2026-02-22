@@ -8,8 +8,12 @@
   layer4 {
     route {
       proxy {
-        to localhost:25565
+        to 10.8.0.2:25565
       }
     }
   }
+}
+
+*.trelta.dev {
+  reverse_proxy 10.8.0.2:80
 }
