@@ -1,14 +1,25 @@
 services:
+  velocity:
+    container_name: vps-velocity
+    image: eclipse-temurin:21-jre
+    working_dir: /velocity
+    volumes:
+      - ./velocity:/velocity
+    command: ["java", "-Xms512M", "-Xmx1G", "-jar", "velocity.jar"]
+    ports:
+      - "25565:25565/tcp" # Minecraft
+    restart: unless-stopped
+
   caddy:
     container_name: vps-caddy
-    build: .
+    build: 
+      context: ./caddy
+      dockerfile: ./caddy/Dockerfile
     ports:
-      - "25565:25565" # SRV spigot.* game
-      - "25575:25575" # SRV spigot.* rcon
-      - "25585:25585" # SRV atm.*    game
-      - "25595:25595" # SRV atm.*    rcon
+      - "80:80"   # HTTP
+      - "443:443" # HTTPS
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro # Config
       - caddy_data:/data
       - caddy_config:/config
 
