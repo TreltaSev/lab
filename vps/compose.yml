@@ -14,12 +14,12 @@ services:
     container_name: vps-caddy
     build: 
       context: ./caddy
-      dockerfile: ./caddy/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "80:80"   # HTTP
       - "443:443" # HTTPS
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro # Config
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro # Config
       - caddy_data:/data
       - caddy_config:/config
 
