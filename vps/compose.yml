@@ -3,8 +3,10 @@ services:
     container_name: vps-caddy
     build: .
     ports:
-      - "25565:25565"
-      - "25575:25575"
+      - "25565:25565" # SRV spigot.* game
+      - "25575:25575" # SRV spigot.* rcon
+      - "25585:25585" # SRV atm.*    game
+      - "25595:25595" # SRV atm.*    rcon
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
