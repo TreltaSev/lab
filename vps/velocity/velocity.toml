@@ -10,7 +10,7 @@ motd = "<#09add3>mcproxy.trelta.dev"
 
 # What should we display for the maximum number of players? (Velocity does not support a cap
 # on the number of players online.)
-show-max-players = 500
+show-max-players = 20
 
 # Should we authenticate players with Mojang? By default, this is on.
 online-mode = true
@@ -75,18 +75,18 @@ sample-players-in-ping = false
 enable-player-address-logging = true
 
 [servers]
-  spigot = "10.8.0.2:25565"
+  paper = "10.8.0.2:25565"
   atm = "10.8.0.2:25585"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
 try = [
-    "spigot"
+    "paper"
 ]
 
 [forced-hosts]
 # Configure your forced hosts here.
-"spigot.trelta.dev" = [
-    "spigot"
+"paper.trelta.dev" = [
+    "paper"
 ]
 "atm.trelta.dev" = [
     "atm"
