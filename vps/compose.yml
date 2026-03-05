@@ -18,6 +18,8 @@ services:
     ports:
       - "80:80"   # HTTP
       - "443:443" # HTTPS
+      - "25575:25575" # paper.* rcon
+      - "25595:25595" # atm.* rcon
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro # Config
       - caddy_data:/data
