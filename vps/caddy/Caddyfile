@@ -1,3 +1,27 @@
+{
+  log {
+    level INFO
+  }
+
+  layer4 {
+
+    # paper.* Command Forward
+    :25575 {
+      route {
+        proxy 10.8.0.2:25575
+      }
+    }
+
+    # atm.* Command Forward
+    :25595 {
+      route {
+        proxy 10.8.0.2:25595
+      }
+    }
+  }
+}
+
+
 # Subdomain + Domains
 *.trelta.dev {
   reverse_proxy 10.8.0.2
