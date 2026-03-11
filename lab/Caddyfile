@@ -1,19 +1,33 @@
-{
-  log {
-    level INFO
-  }
+# === bimbim.click ===
 
-  layer4 {
-    :15565 {
-      route {
-        proxy localhost:25565
-      }
-    }
+# -- Frontend
+bimbim.click {
+  reverse_proxy 10.8.0.2:52004
+}
 
-    :15575 {
-      route {
-        proxy localhost:25575
-      }
-    }
-  }
+# -- Backend
+api.bimbim.click {
+  reverse_proxy 10.8.0.2:52005
+}
+
+# -- Database
+db.bimbim.click {
+  reverse_proxy 10.8.0.2:52006
+}
+
+# === eday.trelta.dev ===
+
+# -- Frontend
+eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52001
+}
+
+# -- Backend
+api.eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52002
+}
+
+# -- Database
+db.eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52003
 }
