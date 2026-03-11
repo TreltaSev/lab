@@ -5,7 +5,7 @@ services:
     working_dir: /velocity
     volumes:
       - ./velocity:/velocity
-    command: ["java", "-Xms512M", "-Xmx1G", "-jar", "velocity.jar"]
+    command: ["java", "-Dvelocity.packet-decode-logging=true", "-Dvelocity.max-known-packs=512", "-Xms512M", "-Xmx1G", "-jar", "velocity.jar"]
     ports:
       - "25565:25565/tcp" # Minecraft
     restart: unless-stopped
@@ -16,8 +16,6 @@ services:
       context: ./caddy
       dockerfile: Dockerfile
     ports:
-      - "80:80"   # HTTP
-      - "443:443" # HTTPS
       - "25575:25575" # paper.* rcon
       - "25595:25595" # atm.* rcon
     volumes:

@@ -1,27 +1,10 @@
 services:
-  velocity:
-    container_name: vps-velocity
-    image: eclipse-temurin:21-jre
-    working_dir: /velocity
-    volumes:
-      - ./velocity:/velocity
-    command: ["java", "-Dvelocity.packet-decode-logging=true", "-Dvelocity.max-known-packs=512", "-Xms512M", "-Xmx1G", "-jar", "velocity.jar"]
-    ports:
-      - "25565:25565/tcp" # Minecraft
-    restart: unless-stopped
-
   caddy:
-    container_name: vps-caddy
-    build: 
-      context: ./caddy
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"   # HTTP
+    container_name: lab-caddy
+    build: .
       - "443:443" # HTTPS
-      - "25575:25575" # paper.* rcon
-      - "25595:25595" # atm.* rcon
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro # Config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
       - caddy_config:/config
 
