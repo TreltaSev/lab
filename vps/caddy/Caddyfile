@@ -21,8 +21,16 @@
   }
 }
 
+# === bimbim.click ===
+bimbim.click {
+  reverse_proxy 10.8.0.2
+}
 
-# Subdomain + Domains
+*.bimbim.click {
+  reverse_proxy 10.8.0.2
+}
+
+# === trelta.dev ===
 *.trelta.dev {
   reverse_proxy 10.8.0.2
 }
