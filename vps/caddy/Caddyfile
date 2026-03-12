@@ -22,19 +22,35 @@
 }
 
 # === bimbim.click ===
+
+# -- Frontend
 bimbim.click {
-  reverse_proxy 10.8.0.2
+  reverse_proxy 10.8.0.2:52004
 }
 
-*.bimbim.click {
-  reverse_proxy 10.8.0.2
+# -- Backend
+api.bimbim.click {
+  reverse_proxy 10.8.0.2:52005
 }
 
-# === trelta.dev ===
-*.trelta.dev {
-  reverse_proxy 10.8.0.2
+# -- Database
+db.bimbim.click {
+  reverse_proxy 10.8.0.2:52006
 }
 
-trelta.dev {
-  reverse_proxy 10.8.0.2
+# === eday.trelta.dev ===
+
+# -- Frontend
+eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52001
+}
+
+# -- Backend
+api.eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52002
+}
+
+# -- Database
+db.eday.trelta.dev {
+  reverse_proxy 10.8.0.2:52003
 }
