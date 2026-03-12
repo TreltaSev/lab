@@ -2,6 +2,8 @@ services:
   caddy:
     container_name: lab-caddy
     build: .
+    ports:
+      - "80:80" # HTTP
       - "443:443" # HTTPS
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
