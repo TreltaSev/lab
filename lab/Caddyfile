@@ -2,32 +2,32 @@
 
 # -- Frontend
 bimbim.click {
-  reverse_proxy 10.8.0.2:52004
+  reverse_proxy localhost:52004
 }
 
 # -- Backend
 api.bimbim.click {
-  reverse_proxy 10.8.0.2:52005
+  reverse_proxy localhost:52005
 }
 
 # -- Database
 db.bimbim.click {
-  reverse_proxy 10.8.0.2:52006
+  reverse_proxy localhost:52006
 }
 
 # === eday.trelta.dev ===
 
 # -- Frontend
 eday.trelta.dev {
-  reverse_proxy 10.8.0.2:52001
+  reverse_proxy localhost:52001
 }
 
 # -- Backend
 api.eday.trelta.dev {
-  reverse_proxy 10.8.0.2:52002
+  reverse_proxy localhost:52002
 }
 
 # -- Database
 db.eday.trelta.dev {
-  reverse_proxy 10.8.0.2:52003
+  reverse_proxy localhost:52003
 }
