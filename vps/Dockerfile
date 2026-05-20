@@ -1,4 +1,1 @@
-FROM caddy:2.11.2-builder AS builder
-
 FROM caddy:2.11.2
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
